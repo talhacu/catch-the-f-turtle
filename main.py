@@ -14,6 +14,7 @@ ekran_yukseklik = screen.window_height()
 freaking_turtle = turtle.Turtle()
 freaking_turtle.shape("turtle")
 freaking_turtle.speed(0)
+freaking_turtle.shapesize(2)
 freaking_turtle.penup()
 
 
@@ -21,11 +22,13 @@ freaking_turtle.penup()
 x_min, x_max = -180, 180
 y_min, y_max = -200, 180
 
+turtle_colors = ["orange", "blue", "red", "green", "purple", "black", "brown", "gray"]
 def belir_ve_kaybol():
     while True:
         for i in range(30):
             x = random.randint(x_min, x_max)
             y = random.randint(y_min, y_max)
+            freaking_turtle.color(turtle_colors[i%8])
             freaking_turtle.goto(x, y)
             freaking_turtle.showturtle()
             time.sleep(1)
